@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Quote Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>✨ Random Quote Generator</h1>
+            <p class="subtitle">Get inspired with a random quote</p>
+        </header>
+
+        <div class="quote-box" id="quoteBox">
+            <div class="quote-content" id="quoteContent">
+                <div class="loading-spinner">Loading...</div>
+            </div>
+            
+            <div class="quote-controls">
+                <button id="newQuoteBtn" class="btn btn-primary">
+                    🎲 New Quote
+                </button>
+                
+                <div class="quote-actions">
+                    <button id="copyBtn" class="btn btn-secondary" title="Copy to clipboard">
+                        📋 Copy
+                    </button>
+                    <button id="tweetBtn" class="btn btn-secondary" title="Share on Twitter">
+                        🐦 Tweet
+                    </button>
+                </div>
+            </div>
+
+            <div class="category-filter">
+                <label for="categorySelect">Filter by category:</label>
+                <select id="categorySelect">
+                    <option value="random">🎯 Random</option>
+                    <option value="motivation">💪 Motivation</option>
+                    <option value="inspiration">🌟 Inspiration</option>
+                    <option value="success">🏆 Success</option>
+                    <option value="dreams">💭 Dreams</option>
+                    <option value="perseverance">🔥 Perseverance</option>
+                    <option value="life">🌱 Life</option>
+                    <option value="wisdom">🧠 Wisdom</option>
+                    <option value="change">🔄 Change</option>
+                    <option value="courage">🦁 Courage</option>
+                    <option value="happiness">😊 Happiness</option>
+                    <option value="authenticity">💎 Authenticity</option>
+                </select>
+            </div>
+        </div>
+
+        <footer>
+            <p>Built with ❤️ using Flask & JavaScript</p>
+            <p class="quote-count" id="quoteCount">Loading quotes...</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
